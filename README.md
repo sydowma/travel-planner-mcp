@@ -20,15 +20,18 @@ npm run build
 
 ## 配置 (可选)
 
-复制 `.env.example` 为 `.env` 并填入 API Keys：
+复制 `.env.example` 为 `.env`（可不填）：
 
 ```bash
 cp .env.example .env
 ```
 
-- `SERP_API_KEY`: SerpAPI key，用于航班搜索 (https://serpapi.com/)
-- `OPENWEATHER_API_KEY`: OpenWeatherMap API key (https://openweathermap.org/api)
-- `EXCHANGE_RATE_API_KEY`: Exchange Rate API key (https://exchangerate-api.com/)
+- `OPENWEATHER_API_KEY`: OpenWeatherMap 实时天气（不填则使用内置历史/季节建议）
+- `EXCHANGE_RATE_API_KEY`: Exchange Rate API 实时汇率（不填则自动回退免费汇率接口）
+
+说明：
+- `scan_trip_windows` / `search_flights` 当前不依赖 `SERP_API_KEY`。
+- 不配置任何 API Key 也能正常用核心行程扫描能力。
 
 > 不配置 API Keys 也可以使用，会返回有用的建议和参考数据。
 
